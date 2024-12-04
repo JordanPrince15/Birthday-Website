@@ -1,0 +1,314 @@
+/* Ensure the body background does not interfere with content */
+body {
+    background: url('bg.gif'); /*no-repeat center center fixed;  */
+    background-size: repeat;
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  
+  .page {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+  }
+  
+  .page:first-of-type {
+    display: flex;
+  }
+  
+  
+/* Typewriter text style */
+.typewriter p {
+    max-width: 90%; /* Ensures the text doesn't stretch too wide */
+    word-wrap: break-word; /* Breaks long words */
+    overflow-wrap: break-word; /* Ensures long words will wrap properly */
+    white-space: normal; /* Allows text to wrap normally */
+    text-align: center; /* Centers the text */
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin: 20px;
+  }
+
+/* Typewriter text style */
+.typewriter h3 {
+    max-width: 90%; /* Ensures the text doesn't stretch too wide */
+    word-wrap: break-word; /* Breaks long words */
+    overflow-wrap: break-word; /* Ensures long words will wrap properly */
+    white-space: normal; /* Allows text to wrap normally */
+    text-align: center; /* Centers the text */
+    font-size: 2rem; /* Adjust font size as needed */
+    line-height: 1.5;
+    margin: 20px;
+  }
+
+  /* For responsiveness, adjust font size on smaller screens */
+@media (max-width: 768px) {
+    .typewriter p {
+      font-size: 1.5rem;
+      max-width: 80%;
+    }
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .image {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    border-radius: 50%;
+  }
+ 
+  
+    /* Typewriter text style for mobile */
+    .typewriter p {
+      font-size: 1.5rem; /* Smaller font size on mobile */
+      max-width: 80%; /* Decrease max width on mobile */
+      padding: 10px; /* Add padding to ensure text is not too close to edges */
+    }
+  
+  
+  .circular {
+    border-radius: 50%;
+    position: absolute;
+    right: 10%;
+  }
+  
+  .top-left {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+  }
+  
+  .center {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #flower {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 10px;
+    height: 0;
+    margin-top: 150px;
+    animation: growStem 2s ease-out forwards;
+  }
+  
+  
+  /* Stem */
+  #flower::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 0;
+    background: green;
+    animation: growStem 2s ease-out forwards;
+  }
+  
+  /* Leaves */
+  #flower .leaf {
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: green;
+    border-radius: 50%;
+    opacity: 0;
+    animation: sproutLeaves 1s ease-out forwards;
+  }
+  
+  #flower .leaf.left1 {
+    bottom: 30px; /* Adjust vertical placement */
+    left: -15px;
+    transform: rotate(-30deg);
+    animation-delay: 1.5s;
+  }
+  
+  #flower .leaf.right1 {
+    bottom: 30px; /* Adjust vertical placement */
+    right: -15px;
+    transform: rotate(30deg);
+    animation-delay: 2s;
+  }
+  
+  #flower .leaf.left2 {
+    bottom: 60px; /* Higher up the stem */
+    left: -25px;
+    transform: rotate(-45deg);
+    animation-delay: 2.5s;
+  }
+  
+  #flower .leaf.right2 {
+    bottom: 60px; /* Higher up the stem */
+    right: -25px;
+    transform: rotate(45deg);
+    animation-delay: 3s;
+  }
+  
+  /* Rose Petals */
+  #flower .petal {
+    position: absolute;
+    bottom: 100%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: pink;
+    opacity: 0;
+    animation: bloomPetals 2s ease-in-out forwards;
+  }
+  
+  #flower .petal.center {
+    animation-delay: 2s;
+  }
+  
+  #flower .petal.left1 {
+    left: -20px;
+    animation-delay: 2.3s;
+  }
+  
+  #flower .petal.right1 {
+    right: -20px;
+    animation-delay: 2.3s;
+  }
+  
+  #flower .petal.left2 {
+    left: -30px;
+    animation-delay: 2.6s;
+  }
+  
+  #flower .petal.right2 {
+    right: -30px;
+    animation-delay: 2.6s;
+  }
+  
+  /* Keyframes for the stem growth */
+  @keyframes growStem {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 120px; /* Adjust for stem length */
+    }
+  }
+  
+  /* Keyframes for the leaves growing */
+  @keyframes sproutLeaves {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      width: 25px;
+      height: 15px;
+      opacity: 1;
+    }
+  }
+  
+  /* Keyframes for the rose petals */
+  @keyframes bloomPetals {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+    50% {
+      width: 25px;
+      height: 15px;
+      opacity: 1;
+    }
+    100% {
+      width: 35px;
+      height: 25px;
+      opacity: 1;
+    }
+  }
+  
+  /* Text moves gracefully up as flower grows */
+  #page5 .typewriter {
+    position: relative;
+    animation: moveTextUp 5s ease-out forwards;
+  }
+  
+
+  @media (max-width: 480px) {
+    .typewriter p {
+      font-size: 1.2rem; /* Even smaller font on very small screens */
+      max-width: 70%; /* Reduce width further */
+    }
+  
+    #flower {
+      margin-top: 80px; /* Even smaller gap for flower */
+    }
+  
+    #flower::before {
+      height: 70px; /* Shorter stem for very small screens */
+    }
+  
+    #flower .petal {
+      width: 18px;
+      height: 12px;
+    }
+  
+    #flower .leaf {
+      width: 15px;
+      height: 10px;
+    }
+  }
+  
+  
+  @keyframes moveTextUp {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+    100% {
+      transform: translateY(-100px); /* Adjust for final position */
+    }
+  }
+
+
+  @keyframes slideText {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100px); 
+    }
+  }
+  
+  /* @keyframes bloom {
+    0% { transform: scale(0.5); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  } */
+  
+  .message {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
