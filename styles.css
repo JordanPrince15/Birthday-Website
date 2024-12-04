@@ -24,12 +24,20 @@ body {
     height: 100vh;
     text-align: center;
     position: relative;
+    padding: 20px;
+    font-size: 1.5rem;
   }
   
   .page:first-of-type {
     display: flex;
   }
   
+  /* Page visibility management */
+
+  
+  .page:first-child {
+    display: block; /* Display the first page by default */
+  }
   
 /* Typewriter text style */
 .typewriter p {
